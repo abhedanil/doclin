@@ -44,6 +44,7 @@ export const sendMentionEmailNotification = async (
   anonymous: boolean = false
 ) => {
   let senderName: string | undefined = ANONYMOUS_USER;
+  //
   if (!anonymous) {
     const sender = await UserRepository.findUserById(senderId);
     senderName = sender?.name;
